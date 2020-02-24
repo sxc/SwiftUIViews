@@ -13,28 +13,15 @@ struct ContentView: View {
     
     var body: some View {
         
+        HStack {
+            Text("Button with symbol")
+                .padding(.horizontal)
+            Image(systemName: "gift.fill")
+        }.padding()
+            .foregroundColor(Color.white)
+        
             
-            VStack(spacing: 20) {
-                Text("GeometryReader")
-                    .font(.largeTitle)
-                
-                Text("Introduction")
-                    .font(.title)
-                    .foregroundColor(.gray)
-                
-                Text("GeometryReader But notice the color stop at the safe areas (white areas on top and bottom).")
-                    .font(.title)
-                    .padding()
-                    .layoutPriority(1)
-                    
-                GeometryReader {_ in
-                    Text("But notice the color stop at the safe areas (white areas on top and bottom).")
-                        .font(.title)
-                }
-                .foregroundColor(.white)
-                .background(Color.green)
-                }
-            .edgesIgnoringSafeArea(.top)
+           
             }
         }
 
