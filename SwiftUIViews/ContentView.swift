@@ -23,9 +23,11 @@ struct ContentView: View {
             Text("With SwiftUI views, you can add layers on top (.overlay) and behind (.background) the view.")
                 .frame(maxWidth: .infinity)
                  .padding()
-                .background(Color.blue)
-                .foregroundColor(Color.white)
-                .layoutPriority(1)
+                .background(
+            RoundedRectangle(cornerRadius: 20)
+                .foregroundColor(Color.blue))
+                .padding()
+                .layoutPriority(2)
             
             Image("50songs")
                 .opacity(0.7)
