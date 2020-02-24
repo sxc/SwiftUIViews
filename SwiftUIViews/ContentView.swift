@@ -12,34 +12,28 @@ struct ContentView: View {
    
     
     var body: some View {
-        VStack(spacing: 20) {
+        ZStack {
+            Color.gray
             
-            Text("Layers")
-                .font(.largeTitle)
-            
-            Text("The Basics")
-                .foregroundColor(Color.gray)
-            
-            Text("With SwiftUI views, you can add layers on top (.overlay) and behind (.background) the view.")
-                .frame(maxWidth: .infinity)
-                 .padding()
-                .background(
-            RoundedRectangle(cornerRadius: 20)
-                .foregroundColor(Color.blue))
+            VStack(spacing: 20) {
+                Text("ZStack")
+                    .font(.largeTitle)
+                
+                Text("Introduction")
+                    .foregroundColor(.white)
+                
+                Text("Zstack are great fo settin background color.")
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.green)
+                
+                Text("But notice the color stop at the safe areas (white areas on top and bottom).")
+                    .frame(maxWidth: .infinity)
                 .padding()
-                .layoutPriority(2)
-            
-            Image("50songs")
-                .opacity(0.7)
-                .background(Color.red.opacity(0.3))
-                .background(Color.yellow.opacity(0.3))
-                .background(Color.blue.opacity(0.3))
-                .overlay(Text("50 Songs"))
-            
-            Image("SF Symbols")
+                    .background(Color.green)
+            }
+            .font(.title)
         }
-        .font(.title)
-        .edgesIgnoringSafeArea(.bottom)
     }
 }
 
