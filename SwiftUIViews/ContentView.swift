@@ -12,30 +12,31 @@ struct ContentView: View {
    
     
     var body: some View {
-        ZStack {
-            Color.gray
+        
             
             VStack(spacing: 20) {
-                Text("ZStack")
+                Text("GeometryReader")
                     .font(.largeTitle)
                 
                 Text("Introduction")
-                    .foregroundColor(.white)
+                    .font(.title)
+                    .foregroundColor(.gray)
                 
-                Text("Zstack are great fo settin background color.")
-                    .frame(maxWidth: .infinity)
+                Text("GeometryReader But notice the color stop at the safe areas (white areas on top and bottom).")
+                    .font(.title)
                     .padding()
-                    .background(Color.green)
-                
-                Text("But notice the color stop at the safe areas (white areas on top and bottom).")
-                    .frame(maxWidth: .infinity)
-                .padding()
-                    .background(Color.green)
+                    .layoutPriority(1)
+                    
+                GeometryReader {_ in
+                    Text("But notice the color stop at the safe areas (white areas on top and bottom).")
+                        .font(.title)
+                }
+                .foregroundColor(.white)
+                .background(Color.green)
+                }
+            .edgesIgnoringSafeArea(.top)
             }
-            .font(.title)
         }
-    }
-}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
